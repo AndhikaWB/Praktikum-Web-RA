@@ -1,0 +1,214 @@
+/* TODO:
+   1. Adaptasi style agar dapat dilihat pada layar berukuran kecil
+   2. Cek tampilan halaman pada layar resolusi tinggi
+   3. Tema gelap dan terang secara dinamis
+*/
+
+/* Impor font Montserrat dari Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+    /* Warna background dasar halaman (hitam) */
+    background-color: #0f0f0f;
+    /* Jenis font yang dipakai pada halaman */
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    /* Hilangkan jarak kosong ke pinggir layar */
+    margin: 0;
+}
+
+header {
+    /* Agar tiap-tiap elemen child dapat memiliki atribut dan style tersendiri */
+    display: flex;
+    /* Elemen dimulai dari bagian kanan */
+    justify-content: flex-end;
+    /* Jarak elemen (arah ke dalam) dari border header; TODO: Cek pada layar resolusi tinggi */
+    padding: 10px 10%;
+    /* Warna background dari header (abu-abu) */
+    background-color: #1f1f1f;
+}
+
+::selection {
+    /* Warna teks saat di select (drag) oleh kursor (putih) */
+    color: #ffffff;
+    /* Warna background teks saat di select (drag) oleh kursor (merah) */
+    background-color: #e11b22;
+}
+
+#navlogo {
+    /* Tinggi maksimal logo situs; TODO: Cek pada layar resolusi tinggi */
+    max-height: 50px;
+    /* Logo selalu menyesuaikan ke sebelah kiri */
+    margin-right: auto;
+}
+
+.navbar li {
+    /* Untuk menghilangkan poin, list item bersebelahan, dan dapat diatur tinggi/lebarnya */
+    display: inline-block;
+    /* Set ukuran font navigasi; TODO: Cek pada layar resolusi tinggi */
+    font-size: 16px;
+    /* Set jarak antar list item */
+    padding: 0 10px;
+}
+
+.navbar a {
+    /* Menghilangkan underline pada link navbar */
+    text-decoration: none;
+    /* Warna default link navbar (putih) */
+    color: #ffffff;
+}
+
+.navbar li:not(.button) a:hover {
+    /* Link navbar berubah warna ketika mouse mendekat (merah) */
+    color: #e11b22;
+}
+
+.navbar .button {
+    /* Jarak teks ke tombol */
+    padding: 5px 10px;
+    /* Warna tombol (merah) */
+    background-color: #e11b22;
+    /* Ketajaman sudut tombol */
+    border-radius: 18px;
+}
+
+.navbar .button:hover {
+    /* Warna tombol saat dilewati kursor (merah tua) */
+    background-color: #a10a10;
+    /* Kursor berubah menjadi pointer saat menyentuh tombol (tidak harus diklik) */
+    cursor: pointer;
+}
+
+main {
+    /* Agar tiap-tiap elemen child dapat memiliki atribut dan style tersendiri */
+    display: flex;
+    /* Agar elemen selalu berada di tengah */
+    margin: 0 auto;
+	justify-content: center;
+    /* Lebar maksimum konten utama */
+	max-width: 1000px;
+    /* Jarak dengan header dan elemen lainnya */
+	padding: 20px;
+}
+
+.post {
+    /* Garis pada pinggir postingan */
+    border: 1px solid #333333;
+    /* Ketajaman sudut postingan */
+    border-radius: 18px;
+    /* Warna background postingan */
+    background-color: #161616;
+    /* Warna teks postingan */
+    color: #ffffff;
+    /* Jarak teks ke border postingan */
+    padding: 5px 24px;
+    /* Ratakan teks postingan */
+    text-align: justify;
+    /* Beri jarak antar postingan */
+    margin: 0 8px;
+    /* Ukuran minimum postingan */
+    min-width: 250px;
+}
+
+.post:hover {
+    /* Warna background postingan saat dilewati kursor */
+    background-color: #222222;
+}
+
+.post img {
+    /* Sesuaikan lebar gambar dengan ukuran postingan */
+    width: 100%;
+    /* Haluskan sudut gambar */
+    border-radius: 18px;
+}
+
+.post_title {
+    /* Warna teks judul secara default */
+    color: #e11b22;
+}
+
+.post_side {
+    /* Sesuaikan tinggi box konten dengan isi konten */
+    height: min-content;
+}
+
+.input_form {
+    /* Agar tiap-tiap input form selalu ke bawah (tidak bersebelahan) */
+    display: block;
+    font-size: 16px;
+    padding: 5px 0;
+    width: 100%;
+    /* Hilangkan border pada input box */
+    border: none;
+    /* Hilangkan outline saat diklik */
+    outline: none;
+    color: #ffffff;
+    /* Set warna background input box transparan */
+    background-color: transparent;
+    /* Jarak tiap input form */
+    margin-bottom: 16px;
+    border-bottom: 1px solid #333333;
+}
+
+/* -------------------- */
+/* Workaround warna teks form berbeda pada tiap browser */
+/* TODO: Tes pada browser selain Chromium dan Firefox */
+/* -------------------- */
+
+.input_form::placeholder {
+    color: #939393;
+    opacity: unset;
+}
+
+.input_select {
+    color: #939393;
+    background-color: transparent;
+}
+
+.input_select:hover {
+    background-color: #222222;
+}
+
+/* -------------------- */
+
+.input_button {
+    color: #ffffff;
+    font-size: 16px;
+    /* Set tinggi input button */
+    line-height: 28px;
+    /* Set lebar input button terhadap teks */
+    padding: 0 12px;
+    /* Hilangkan border pada input button */
+    border: none;
+    /* Warna input button pada form */
+    background-color: #e11b22;
+    /* Perhalus sudut input button */
+    border-radius: 18px;
+    /* Tambah jarak setelah bagian bawah input button */
+    margin-bottom: 18px;
+}
+
+.input_button:hover {
+    /* Warna input button saat dilewati kursor */
+    background-color: #a10a10;
+}
+
+footer {
+    color: #ffffff;
+    font-size: 16px;
+    /* Posisikan teks footer di tengah */
+    text-align: center;
+    /* Atur jarak footer agar tidak terlalu dekat elemen lainnya */
+    padding: 5px 0 28px 0;
+}
+
+footer p {
+    /* Kurangi jarak (spacing) antar paragraf */
+    margin: 4px 0;
+}
+
+#to-top a {
+    /* Hilangkan underline */
+    text-decoration: none;
+    /* Ubah warna link menjadi merah */
+    color: #e11b22;
+}
