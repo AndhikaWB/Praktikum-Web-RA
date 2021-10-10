@@ -10,6 +10,6 @@ Repo ini berisi kumpulan tugas praktikum yang telah diberikan dan dikumpulkan.
 
 ## Hasil Praktikum
 
-Live preview halaman dapat diakses langsung melalui environment "github-pages".
+Live preview halaman dapat diakses langsung melalui environment "github-pages". **Note:** preview akan diganti dan expired otomatis setelah branch minggu selanjutnya saya rilis.
 
 ![Screenshot Halaman](preview.png)
