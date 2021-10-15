@@ -1,0 +1,309 @@
+/* TODO:
+   1. Adaptasi style agar dapat dilihat pada layar berukuran kecil
+   2. Cek tampilan halaman pada layar resolusi tinggi
+   3. Tema gelap dan terang secara dinamis
+*/
+
+/* Impor font Montserrat dari Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+* {
+    /* Hilangkan jarak margin bawaan */
+    margin: 0;
+    /* Hilangkan jarak padding bawaan */
+    padding: 0;
+    /* Hitung padding dll dalam kalkulasi ukuran elemen */
+    box-sizing: border-box;
+}
+
+body {
+    /* Atur warna background dasar situs */
+    background-color: #0f0f0f;
+    /* Atur jenis font dasar situs */
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    /* Atur ukuran font dasar situs */
+    font-size: medium;
+    /* Atur warna font dasar situs */
+    color: #ffffff;
+    /* Workaround untuk footer */
+    min-height: 100%;
+}
+
+.head-wrapper {
+    /* Atur warna background header */
+    background-color: #1f1f1f;
+}
+
+.head-wrapper img {
+    /* Ubah logika penampilan gambar menjadi blok */
+    display: block;
+    /* Tengahkan blok gambar */
+    margin: 0 auto;
+    /* Cegah gambar ditarik melebihi ukuran aslinya */
+    max-width: 100%;
+    /* Beri jarak logo situs ke headline situs */
+    padding: 5px 0;
+}
+
+.head-wrapper p {
+    /* Tengahkan posisi headline situs */
+    text-align: center;
+}
+
+.head-wrapper nav {
+    /* Atur warna background bagian navigasi */
+    background-color: #333333;
+    /* Tengahkan daftar navigasi situs */
+    text-align: center;
+    /* Atur jarak nav terhadap header dan konten */
+    margin: 10px 0;
+}
+
+.head-wrapper ul {
+    /* Atur jarak kanan kiri daftar navigasi terhadap layar */
+    padding: 0 10%;
+}
+
+.head-wrapper li {
+    display: inline-block;
+    /* Atur jarak antar list item navigasi */
+    margin: 0 14px;
+    /* Atur jarak padding li */
+    padding: 10px 0;
+}
+
+.head-wrapper a {
+    /* Hilangkan underline pada link navigasi */
+    text-decoration: none;
+    /* Ubah warna link navigasi */
+    color: #ffffff;
+    /* Atur jarak padding a (untuk mengukur list terakhir) */
+    padding: 5px 10px;
+}
+
+.head-wrapper li:not(:last-child) a:hover {
+    /* Atur warna hover link navigasi, kecuali list item terakhir */
+    color: #a10a10;
+}
+
+.head-wrapper li:last-child a {
+    /* Haluskan sudut background link navigasi (untuk pewarnaan) */
+    border-radius: 20px;
+    /* Beri warna background link navigasi terakhir */
+    background-color: #e11b22;
+}
+
+.head-wrapper li:last-child a:hover {
+    /* Beri warna hover background link navigasi terakhir */
+    background-color: #a10a10;
+}
+
+.content-wrapper {
+    /* Atur jarak kanan kiri konten terhadap layar */
+    padding: 0 10%;
+}
+
+.content-wrapper .left-card {
+    float: left;
+    /* Lebar konten utama */
+    width: 75%;
+}
+
+.content-wrapper .right-card {
+    float: left;
+    /* Lebar konten sampingan */
+    width: 25%;
+}
+
+.content-wrapper .card {
+    background-color: #161616;
+    /* Haluskan sudut tiap-tiap kartu */
+    border-radius: 20px;
+    /* Jarak isi konten tiap-tiap kartu */
+    padding: 20px;
+    margin: 0 10px 10px 0;
+    /* Beri garis border pada tiap-tiap kartu */
+    border: 1px solid #333333;
+}
+
+.content-wrapper .card.cv {
+    /* Workaround bagian sidebar CV */
+    padding: 0;
+    /* Workaround bagian sidebar CV */
+    overflow: hidden;
+    position: relative;
+}
+
+.card.cv .sidebar {
+    /* Jarak padding sidebar CV */
+    padding: 10px;
+    float: left;
+    /* Lebar sidebar CV */
+    width: 25%;
+    background-color: #222222;
+    border-right: 1px solid #333333;
+    /* Workaround warna background sidebar CV */
+    height: 100%;
+    position: absolute;
+}
+
+.card.cv .sidebar h5 {
+    /* Nama pada CV */
+    text-align: center;
+    color: #e11b22;
+    font-size: 16px;
+    padding: 14px 0;
+}
+
+.card.cv .sidebar img {
+    /* Ukuran maks gambar profil */
+    max-width: 100%;
+    display: block;
+    /* Tengahkan gambar profil */
+    margin: 0 auto;
+    /* Atur foto profil menjadi bulat */
+    border-radius: 50%;
+}
+
+.card.cv .sidebar .contact-info ul {
+    display: block;
+    /* Hilangkan bullet pada ul */
+    list-style: none;
+}
+
+.card.cv .sidebar .contact-info li {
+    padding-bottom: 5px;
+}
+
+.card.cv .sidebar .contact-info li:before {
+    padding-right: 5px;
+    /* Ubah ikon SVG menjadi putih */
+    filter: invert(100%)
+}
+
+.card.cv .sidebar .contact-info li.birthday:before {
+    /* Ikon untuk tanggal lahir (credit: Bootstrap) */
+    content: url('../ico/calendar.svg');
+}
+
+.card.cv .contact-info li.location:before {
+    /* Ikon untuk tempat tinggal (credit: Bootstrap) */
+    content: url('../ico/location.svg');
+}
+
+.card.cv .contact-info li.email:before {
+    /* Ikon untuk email (credit: Bootstrap) */
+    content: url('../ico/email.svg');
+}
+
+.card.cv .contact-info li.phone:before {
+    /* Ikon untuk telepon (credit: Bootstrap) */
+    content: url('../ico/telephone.svg');
+}
+
+.card.cv .contact-info li.telegram:before {
+    /* Ikon untuk Telegram (credit: Bootstrap) */
+    content: url('../ico/telegram.svg');
+}
+
+.card.cv .mainbar {
+    float: right;
+    /* Lebar detail CV (minat dsb) */
+    width: 75%;
+    /* Jarak konten ke border detail CV */
+    padding: 20px;
+    /* Rata kiri-kanan untuk teks */
+    text-align: justify;
+}
+
+.card.cv .mainbar h2 {
+    padding-bottom: 10px;
+    color: #a10a10;
+}
+
+.card.cv .mainbar p {
+    padding-bottom: 10px;
+}
+
+.card.cv .mainbar ul {
+    /* Tambah jarak untuk bullet agar terlihat */
+    padding-left: 20px;
+}
+
+.card.cv .mainbar li {
+    /* Jarak tiap-tiap list item skill */
+    padding: 3px 0;
+}
+
+.card.cv .mainbar li:hover b {
+    color: #e11b22;
+    /* Teks miring saat dilewati mouse */
+    font-style: italic;
+}
+
+aside .card h2 {
+    padding-bottom: 10px;
+}
+
+aside .card ol {
+    padding-left: 20px;
+}
+
+aside .card li {
+    padding: 3px 0;
+}
+
+aside .card li a {
+    color: #e11b22;
+    /* Hilangkan underline pada link berita */
+    text-decoration: none;
+}
+
+aside .card li a:hover {
+    /* Beri underline saat link berita dilewati kursor */
+    text-decoration: underline;
+}
+
+aside .card li a:visited {
+    color: #a10a10;
+}
+
+.card.none {
+    /* Tes kartu lain (WIP; kurang waktu) */
+    display: none;
+}
+
+.card .fake-img {
+    /* Gambar palsu untuk kartu tes */
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+footer {
+    /* Posisikan teks footer di tengah */
+    text-align: center;
+    /* Atur jarak footer agar tidak terlalu dekat elemen lainnya */
+    padding: 5px 0 28px 0;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    /* Posisikan teks footer di tengah */
+    text-align: center;
+    /* Atur jarak footer agar tidak terlalu dekat elemen lainnya */
+    padding: 5px 0 10px 0;
+}
+
+footer p {
+    /* Kurangi jarak (spacing) antar paragraf */
+    margin: 4px 0;
+}
+
+#to-top a {
+    /* Hilangkan underline */
+    text-decoration: none;
+    /* Ubah warna link menjadi merah */
+    color: #e11b22;
+}
